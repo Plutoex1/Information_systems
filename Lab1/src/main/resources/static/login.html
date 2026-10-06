@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <form class="auth" method="post" action="/login">
+    <h2>Вход</h2>
+    <div class="msg" id="msg"></div>
+    <label>Логин<input name="username" required autofocus></label>
+    <label>Пароль<input name="password" type="password" required></label>
+    <button class="primary" type="submit">Войти</button>
+    <p class="muted">Нет аккаунта? <a href="/register.html">Регистрация</a></p>
+  </form>
+  <script>
+    if (location.search.includes('error')) document.getElementById('msg').textContent = 'Неверный логин или пароль';
+  </script>
+</body>
+</html>
