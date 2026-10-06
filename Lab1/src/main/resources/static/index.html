@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Космодесантники</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav id="menu"></nav>
+  <main>
+    <div class="toolbar">
+      <button class="primary" id="btnCreate">Создать</button>
+      <span class="grow"></span>
+      <label>Найти по ID <input id="idInput" type="number" min="1" step="1" style="width: 6em"></label>
+      <button id="btnFind">Найти</button>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <button id="prev">←</button>
+      <span id="pageInfo"></span>
+      <button id="next">→</button>
+      <label>На странице
+        <select id="pageSize">
+          <option>5</option><option selected>10</option><option>25</option><option>50</option>
+        </select>
+      </label>
+      <span id="total" class="muted"></span>
+    </div>
+  </main>
+
+  <!-- создание / изменение -->
+  <dialog id="marineDialog">
+    <form id="marineForm" novalidate>
+      <h2 id="dlgTitle"></h2>
+      <div id="marineFields"></div>
+      <ul class="errors" id="formErrors"></ul>
+      <div class="buttons">
+        <button type="button" id="btnCancel">Отмена</button>
+        <button type="submit" class="primary">Сохранить</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- информация об объекте -->
+  <dialog id="infoDialog">
+    <div id="infoBody"></div>
+    <div class="buttons">
+      <button id="infoEdit">Изменить</button>
+      <button id="infoClose">Закрыть</button>
+    </div>
+  </dialog>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
